@@ -1,0 +1,160 @@
+body {
+  background-color: #1f2937;
+}
+section {
+  display: flex;
+}
+.heder {
+  color: aliceblue;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  background-color: #10b981;
+  padding: 7px;
+  font-size: 40px;
+  width: 100%;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 1rem;
+  background-color: aliceblue;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 262px;
+  border-radius: 20px;
+  margin: 20px;
+}
+.card:hover {
+  box-shadow: inset 0 0 0 1px black;
+  outline: 3px solid rgb(255, 0, 128);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title span {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+}
+.span {
+  color: #646464;
+  transform: translateX(40px);
+  transform: translateY(-30px);
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  padding-bottom: 15px;
+}
+/* colors */
+.colorBTC {
+  background-color: rgb(255, 159, 34);
+}
+.colorSOL {
+  background-color: rgb(0, 224, 236);
+}
+.colorMatic {
+  background-color: rgb(140, 49, 225);
+}
+.colorPolkadot {
+  background-color: rgb(210, 0, 158);
+}
+.colorStellar {
+  background-color: rgb(40, 38, 32);
+}
+.colorShibaInu {
+  background-color: rgb(255, 56, 25);
+}
+.colorLink {
+  background-color: rgb(14, 66, 255);
+}
+.colorNear {
+  background-color: rgb(2, 229, 123);
+}
+.colorAvax {
+  background-color: rgb(229, 2, 59);
+}
+
+/* colors */
+.title span svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  height: 40px;
+}
+
+.title-text {
+  margin-left: 0.5rem;
+  color: #374151;
+  font-size: 22px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.percent {
+  margin-left: 0.9rem;
+  color: #1f2937;
+  font-weight: 600;
+  display: flex;
+  font-size: 1.9rem;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.data p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #014c17;
+  font-size: 3.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 3px;
+}
+
+.data .range {
+  position: relative;
+  background-color: #e5e7eb;
+  width: 100%;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.data .range .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #10b981;
+  /* width: 17%; */
+  height: 100%;
+  border-radius: 1rem;
+}
+#total {
+  color: azure;
+}
+
+@media (max-width: 680px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}
