@@ -9,6 +9,33 @@ const elements = {
   numberAvax: [],
   numberDot: [125.5],
 };
+const allBTC = [0, 0];
+const allSOL = [0, 0];
+const allMatic = [28.2, 129.3];
+const allStellar = [25, 249.5, 589];
+const allShib = [0, 0];
+const allLink = [0, 0];
+const allNear = [0, 0];
+const allAvax = [0, 0];
+const allDot = [10.2, 0];
+
+const sumMatic = allMatic.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allMatic").textContent = `${sumMatic} all Matic`;
+
+const sumStellar = allStellar.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allStellar").textContent = `${sumStellar} all Stellar`;
+
+const sumPolkadot = allDot.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allDot").textContent = `${sumPolkadot} all Polkadot`;
 
 const paragraph1 = document.getElementById("numberBTC");
 const paragraph2 = document.getElementById("numberSOL");
@@ -58,7 +85,6 @@ let number9 = elements.numberDot.length
   ? elements.numberDot.reduce((a, b) => a + b, 0)
   : parseInt(paragraph9.textContent);
 
-
 fill1.style.width = `${(number1 / 912) * 100}%`;
 fill2.style.width = `${(number2 / 1056) * 100}%`;
 fill3.style.width = `${(number3 / 672) * 100}%`;
@@ -68,7 +94,6 @@ fill6.style.width = `${(number6 / 192) * 100}%`;
 fill7.style.width = `${(number7 / 336) * 100}%`;
 fill8.style.width = `${(number8 / 480) * 100}%`;
 fill9.style.width = `${(number9 / 528) * 100}%`;
-
 
 function calculateAndDisplayTotal() {
   const paragraphs = [
@@ -93,7 +118,9 @@ function calculateAndDisplayTotal() {
 
   document.querySelector("h1").textContent = `Total: ${Math.ceil(total)}$`;
   const amount = 4800 - total;
-  document.getElementById("amount").textContent = `Amount: - ${Math.ceil(amount)}$`;
+  document.getElementById("amount").textContent = `Amount: - ${Math.ceil(
+    amount
+  )}$`;
 }
 calculateAndDisplayTotal();
 
