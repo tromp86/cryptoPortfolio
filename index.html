@@ -6,10 +6,10 @@
     <title>crypto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="color-change-4x ">
     <div class="heder">Crypto Dashboard only NDAX</div>
     <section>
-      <h1 id="total"></h1>
+      <h1 id="total" onclick="showSum()">***</h1>
       <h1 id="amount"></h1>
       <h1 id="allProsent"></h1>
     </section>
@@ -36,7 +36,7 @@
           </div>
           <div class="data">
             <p id="numberBTC">0$</p>
-            <span class="span">0</span>
+            <span class="span" id="allBtc">0</span>
             <div class="range range1">
               <div class="fill"></div>
             </div>
@@ -64,7 +64,7 @@
           </div>
           <div class="data">
             <p id="numberSOL">0$</p>
-            <span class="span">0</span>
+            <span class="span" id="allSOL">0</span>
             <div class="range range2">
               <div class="fill"></div>
             </div>
@@ -148,7 +148,7 @@
           </div>
           <div class="data">
             <p id="numberShib">0$</p>
-            <span class="span">0</span>
+            <span class="span" id="allShib">0</span>
             <div class="range range5">
               <div class="fill"></div>
             </div>
@@ -176,7 +176,7 @@
           </div>
           <div class="data">
             <p id="numberLink">0$</p>
-            <span class="span">0</span>
+            <span class="span" id="allLink">0</span>
             <div class="range range6">
               <div class="fill"></div>
             </div>
@@ -205,7 +205,7 @@
   </div>
   <div class="data">
     <p id="numberNear">0$</p>
-    <span class="span">0</span>
+    <span class="span" id="allNear">0</span>
     <div class="range range7">
       <div class="fill"></div>
     </div>
@@ -234,7 +234,7 @@
   </div>
   <div class="data">
     <p id="numberAvax">0$</p>
-    <span class="span">0</span>
+    <span class="span" id="allAvax">0</span>
     <div class="range range8">
       <div class="fill"></div>
     </div>
@@ -269,13 +269,11 @@
     </div>
   </div>
 </div>
-
-<!-- <footer>
-  <p>&copy; 2024 My Crypto Dashboard. All rights reserved.</p>
-</footer> -->
-      
+     
     </main>
-
+    <footer>
+      <p>&copy; 2024 My Crypto Dashboard. All rights reserved.</p>
+    </footer>
     <script src="./main.js"></script>
   </body>
 </html>

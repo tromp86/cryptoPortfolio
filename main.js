@@ -9,7 +9,7 @@ const elements = {
   numberAvax: [],
   numberDot: [125.5],
 };
-const allBTC = [0, 0];
+const allBtc = [0, 0];
 const allSOL = [0, 0];
 const allMatic = [28.2, 129.3];
 const allStellar = [25, 249.5, 589];
@@ -18,6 +18,18 @@ const allLink = [0, 0];
 const allNear = [0, 0];
 const allAvax = [0, 0];
 const allDot = [10.2, 0];
+
+const sumBtc = allBtc.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allBtc").textContent = `${sumBtc} all Bitcoin`;
+
+const sumSol = allSOL.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allSOL").textContent = `${sumSol} all Solana`;
 
 const sumMatic = allMatic.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
@@ -31,11 +43,39 @@ const sumStellar = allStellar.reduce(
 );
 document.getElementById("allStellar").textContent = `${sumStellar} all Stellar`;
 
+const sumShib = allShib.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allShib").textContent = `${sumShib} all Shiba inu`;
+
+const sumLink = allLink.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allLink").textContent = `${sumLink} all Chainlink`;
+
+const sumNear = allNear.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allNear").textContent = `${sumShib} all Near protocol`;
+
+const sumAvax = allAvax.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.getElementById("allAvax").textContent = `${sumAvax} all Avalanche`;
+
 const sumPolkadot = allDot.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
 document.getElementById("allDot").textContent = `${sumPolkadot} all Polkadot`;
+
+// if (sumBtc, numberSOL === 0) {
+//   document.getElementById("allBtc").textContent = 0;
+// }
 
 const paragraph1 = document.getElementById("numberBTC");
 const paragraph2 = document.getElementById("numberSOL");
@@ -96,32 +136,41 @@ fill8.style.width = `${(number8 / 480) * 100}%`;
 fill9.style.width = `${(number9 / 528) * 100}%`;
 
 function calculateAndDisplayTotal() {
-  const paragraphs = [
-    document.getElementById("numberBTC"),
-    document.getElementById("numberSOL"),
-    document.getElementById("numberMatic"),
-    document.getElementById("numberStellar"),
-    document.getElementById("numberShib"),
-    document.getElementById("numberLink"),
-    document.getElementById("numberNear"),
-    document.getElementById("numberAvax"),
-    document.getElementById("numberDot"),
-  ];
+  const totalParagraph = document.querySelector("h1");
+  const differenceParagraph = document.getElementById("amount");
 
-  let total = 0;
-  for (let paragraph of paragraphs) {
-    const id = paragraph.id;
-    const value = elements[id][0] || parseInt(paragraph.textContent);
-    paragraph.textContent = `${value}$`;
-    total += value;
-  }
+  const total = 4800;
 
-  document.querySelector("h1").textContent = `Total: ${Math.ceil(total)}$`;
-  const amount = 4800 - total;
-  document.getElementById("amount").textContent = `Amount: - ${Math.ceil(
-    amount
-  )}$`;
+  totalParagraph.textContent = `Total: ***$`; 
+  differenceParagraph.textContent = `Amount: - ***$`; 
+
+  totalParagraph.addEventListener("click", function() {
+    const paragraphs = [
+      document.getElementById("numberBTC"),
+      document.getElementById("numberSOL"),
+      document.getElementById("numberMatic"),
+      document.getElementById("numberStellar"),
+      document.getElementById("numberShib"),
+      document.getElementById("numberLink"),
+      document.getElementById("numberNear"),
+      document.getElementById("numberAvax"),
+      document.getElementById("numberDot"),
+    ];
+
+    let total = 0;
+    for (let paragraph of paragraphs) {
+      const id = paragraph.id;
+      const value = elements[id][0] || parseInt(paragraph.textContent);
+      paragraph.textContent = `${value}$`;
+      total += value;
+    }
+
+    totalParagraph.textContent = `Total: ${Math.ceil(total)}$`;
+    const amount = 4800 - total;
+    differenceParagraph.textContent = `Amount: - ${Math.ceil(amount)}$`;
+  });
 }
+
 calculateAndDisplayTotal();
 
 function calculateAndDisplayPercentages() {
@@ -133,3 +182,14 @@ function calculateAndDisplayPercentages() {
   document.getElementById("allProsent").textContent = `${totalPercentage}%`;
 }
 calculateAndDisplayPercentages();
+
+function showSum() {
+  const sumBtc = allBtc.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
+  if (sumBtc !== 0) {
+    document.getElementById("total").textContent = `${sumBtc} all Bitcoin`;
+  }
+}

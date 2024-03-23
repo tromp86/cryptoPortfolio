@@ -21,7 +21,17 @@ h1 {
   padding: 7px;
   font-size: 40px;
   width: 100%;
+  height: 100%;
+  cursor: default;
 }
+#total {
+  cursor: pointer;
+}
+#total:hover {
+  color: #76ffd1;
+  transition: 1s;
+}
+
 .allCrypto {
   display: flex;
   justify-content: space-between;
@@ -34,6 +44,8 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  margin: auto;
+  max-width: 1050px;
 }
 
 .card {
@@ -52,16 +64,26 @@ h1 {
   box-shadow: inset 0 0 0 1px black;
   outline: 3px solid rgb(255, 0, 128);
 }
+#allBtc,
+#allSOL,
 #allDot,
 #allMatic,
-#allStellar {
+#allStellar,
+#allShib,
+#allLink,
+#allNear,
+#allAvax {
   opacity: 0;
 }
 .card:hover #allDot,
 .card:hover #allMatic,
-.card:hover #allStellar {
-  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
-    both;
+.card:hover #allStellar,
+.card:hover #allSOL,
+.card:hover #allBtc,
+.card:hover #allShib,
+.card:hover #allLink,
+.card:hover #allNear,
+.card:hover #allAvax {
   animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
@@ -128,6 +150,24 @@ h1 {
   background-color: rgb(229, 2, 59);
 }
 
+.color-change-4x {
+  animation: color-change-4x 16s linear infinite alternate both;
+}
+@keyframes color-change-4x {
+  0% {
+    background: #1f2937;
+  }
+  33.3333% {
+    background: #253448;
+  }
+  66.666% {
+    background: #16202f;
+  }
+  100% {
+    background: #28313d;
+  }
+}
+
 /* colors */
 .title span svg {
   position: absolute;
@@ -189,6 +229,7 @@ h1 {
 #total {
   color: azure;
 }
+
 footer {
   background-color: #121821;
   color: #fff;
@@ -198,7 +239,7 @@ footer {
   bottom: 0;
   width: 100%;
   font-size: 1.2rem;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 @media (max-width: 680px) {
