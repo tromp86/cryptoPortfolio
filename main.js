@@ -73,10 +73,6 @@ const sumPolkadot = allDot.reduce(
 );
 document.getElementById("allDot").textContent = `${sumPolkadot} all Polkadot`;
 
-// if (sumBtc, numberSOL === 0) {
-//   document.getElementById("allBtc").textContent = 0;
-// }
-
 const paragraph1 = document.getElementById("numberBTC");
 const paragraph2 = document.getElementById("numberSOL");
 const paragraph3 = document.getElementById("numberMatic");
@@ -87,15 +83,15 @@ const paragraph7 = document.getElementById("numberNear");
 const paragraph8 = document.getElementById("numberAvax");
 const paragraph9 = document.getElementById("numberDot");
 
-const fill1 = document.querySelector(".data .range1 .fill");
-const fill2 = document.querySelector(".data .range2 .fill");
-const fill3 = document.querySelector(".data .range3 .fill");
-const fill4 = document.querySelector(".data .range4 .fill");
-const fill5 = document.querySelector(".data .range5 .fill");
-const fill6 = document.querySelector(".data .range6 .fill");
-const fill7 = document.querySelector(".data .range7 .fill");
-const fill8 = document.querySelector(".data .range8 .fill");
-const fill9 = document.querySelector(".data .range9 .fill");
+const fill1 = document.querySelector(".range1 .fill");
+const fill2 = document.querySelector(".range2 .fill");
+const fill3 = document.querySelector(".range3 .fill");
+const fill4 = document.querySelector(".range4 .fill");
+const fill5 = document.querySelector(".range5 .fill");
+const fill6 = document.querySelector(".range6 .fill");
+const fill7 = document.querySelector(".range7 .fill");
+const fill8 = document.querySelector(".range8 .fill");
+const fill9 = document.querySelector(".range9 .fill");
 
 let number1 = elements.numberBTC.length
   ? elements.numberBTC.reduce((a, b) => a + b, 0)
@@ -125,26 +121,16 @@ let number9 = elements.numberDot.length
   ? elements.numberDot.reduce((a, b) => a + b, 0)
   : parseInt(paragraph9.textContent);
 
-fill1.style.width = `${(number1 / 912) * 100}%`;
-fill2.style.width = `${(number2 / 1056) * 100}%`;
-fill3.style.width = `${(number3 / 672) * 100}%`;
-fill4.style.width = `${(number4 / 384) * 100}%`;
-fill5.style.width = `${(number5 / 240) * 100}%`;
-fill6.style.width = `${(number6 / 192) * 100}%`;
-fill7.style.width = `${(number7 / 336) * 100}%`;
-fill8.style.width = `${(number8 / 480) * 100}%`;
-fill9.style.width = `${(number9 / 528) * 100}%`;
-
 function calculateAndDisplayTotal() {
   const totalParagraph = document.querySelector("h1");
   const differenceParagraph = document.getElementById("amount");
 
   const total = 4800;
 
-  totalParagraph.textContent = `Total: ***$`; 
-  differenceParagraph.textContent = `Amount: - ***$`; 
+  totalParagraph.textContent = `Total: ***$`;
+  differenceParagraph.textContent = `Amount: - ***$`;
 
-  totalParagraph.addEventListener("click", function() {
+  totalParagraph.addEventListener("click", function () {
     const paragraphs = [
       document.getElementById("numberBTC"),
       document.getElementById("numberSOL"),
@@ -156,6 +142,50 @@ function calculateAndDisplayTotal() {
       document.getElementById("numberAvax"),
       document.getElementById("numberDot"),
     ];
+
+    // fill1.style.width = `${(number1 / 912) * 100}%`;
+    // fill2.style.width = `${(number2 / 1056) * 100}%`;
+    // fill3.style.width = `${(number3 / 672) * 100}%`;
+    // fill4.style.width = `${(number4 / 384) * 100}%`;
+    // fill5.style.width = `${(number5 / 240) * 100}%`;
+    // fill6.style.width = `${(number6 / 192) * 100}%`;
+    // fill7.style.width = `${(number7 / 336) * 100}%`;
+    // fill8.style.width = `${(number8 / 480) * 100}%`;
+    // fill9.style.width = `${(number9 / 528) * 100}%`;
+
+    function animateFillWidth(fill, targetWidth) {
+      let currentWidth = 0;
+
+      const interval = setInterval(() => {
+        currentWidth += 0.1;
+        if (currentWidth === 0.1) {
+          fill1.style.width = "0";
+          fill2.style.width = "0";
+          fill3.style.width = "0";
+          fill4.style.width = "0";
+          fill5.style.width = "0";
+          fill6.style.width = "0";
+          fill7.style.width = "0";
+          fill8.style.width = "0";
+          fill9.style.width = "0";
+        }
+
+        fill.style.width = `${currentWidth}%`;
+
+        if (currentWidth >= targetWidth) {
+          clearInterval(interval);
+        }
+      }, 20);
+    }
+    animateFillWidth(fill1, (number1 / 912) * 100);
+    animateFillWidth(fill2, (number2 / 1056) * 100);
+    animateFillWidth(fill3, (number3 / 672) * 100);
+    animateFillWidth(fill4, (number4 / 384) * 100);
+    animateFillWidth(fill5, (number5 / 240) * 100);
+    animateFillWidth(fill6, (number6 / 192) * 100);
+    animateFillWidth(fill7, (number7 / 336) * 100);
+    animateFillWidth(fill8, (number8 / 480) * 100);
+    animateFillWidth(fill9, (number9 / 528) * 100);
 
     let total = 0;
     for (let paragraph of paragraphs) {
@@ -182,14 +212,4 @@ function calculateAndDisplayPercentages() {
   document.getElementById("allProsent").textContent = `${totalPercentage}%`;
 }
 calculateAndDisplayPercentages();
-
-function showSum() {
-  const sumBtc = allBtc.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
-  );
-
-  if (sumBtc !== 0) {
-    document.getElementById("total").textContent = `${sumBtc} all Bitcoin`;
-  }
-}
+// __________________________________________new
