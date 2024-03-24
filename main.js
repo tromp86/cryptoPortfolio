@@ -157,19 +157,13 @@ function calculateAndDisplayTotal() {
       let currentWidth = 0;
 
       const interval = setInterval(() => {
-        currentWidth += 0.1;
-        if (currentWidth === 0.1) {
-          fill1.style.width = "0";
-          fill2.style.width = "0";
-          fill3.style.width = "0";
-          fill4.style.width = "0";
-          fill5.style.width = "0";
-          fill6.style.width = "0";
-          fill7.style.width = "0";
-          fill8.style.width = "0";
-          fill9.style.width = "0";
+        currentWidth += 0.3;
+        if (currentWidth === 0.3) {
+          const fills = document.querySelectorAll(".fill");
+          fills.forEach((fill) => {
+            fill.style.width = "0";
+          });
         }
-
         fill.style.width = `${currentWidth}%`;
 
         if (currentWidth >= targetWidth) {
