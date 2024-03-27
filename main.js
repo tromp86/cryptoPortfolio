@@ -2,7 +2,7 @@ const elements = {
   numberBTC: [],
   numberSOL: [],
   numberMatic: [172],
-  numberStellar: [154],
+  numberStellar: [258],
   numberShib: [],
   numberLink: [],
   numberNear: [],
@@ -12,7 +12,7 @@ const elements = {
 const allBtc = [0, 0];
 const allSOL = [0, 0];
 const allMatic = [28.2, 129.3];
-const allStellar = [25, 249.5, 589];
+const allStellar = [25, 249.5, 589, 554];
 const allShib = [0, 0];
 const allLink = [0, 0];
 const allNear = [0, 0];
@@ -166,10 +166,13 @@ function calculateAndDisplayTotal() {
         }
         fill.style.width = `${currentWidth}%`;
 
+        if (currentWidth >= 90) {
+          fill.style.backgroundColor = "crimson";
+        }
         if (currentWidth >= targetWidth) {
           clearInterval(interval);
         }
-      }, 20);
+      }, 10);
     }
     animateFillWidth(fill1, (number1 / 912) * 100);
     animateFillWidth(fill2, (number2 / 1056) * 100);
