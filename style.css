@@ -75,6 +75,7 @@ h1 {
   width: 262px;
   border-radius: 20px;
   margin: 20px;
+  background: linear-gradient(145deg, #fff3ff, aliceblue);
 }
 .card:last-of-type {
   margin-bottom: 30px;
