@@ -7,7 +7,7 @@ const elements = {
   numberLink: [],
   numberNear: [],
   numberAvax: [],
-  numberDot: [125.5],
+  numberDot: [234],
 };
 const allBtc = [0, 0];
 const allSOL = [0, 0];
@@ -17,7 +17,7 @@ const allShib = [0, 0];
 const allLink = [0, 0];
 const allNear = [0, 0];
 const allAvax = [0, 0];
-const allDot = [10.2, 0];
+const allDot = [10.2, 8.39];
 
 const sumBtc = allBtc.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
@@ -143,16 +143,6 @@ function calculateAndDisplayTotal() {
       document.getElementById("numberDot"),
     ];
 
-    // fill1.style.width = `${(number1 / 912) * 100}%`;
-    // fill2.style.width = `${(number2 / 1056) * 100}%`;
-    // fill3.style.width = `${(number3 / 672) * 100}%`;
-    // fill4.style.width = `${(number4 / 384) * 100}%`;
-    // fill5.style.width = `${(number5 / 240) * 100}%`;
-    // fill6.style.width = `${(number6 / 192) * 100}%`;
-    // fill7.style.width = `${(number7 / 336) * 100}%`;
-    // fill8.style.width = `${(number8 / 480) * 100}%`;
-    // fill9.style.width = `${(number9 / 528) * 100}%`;
-
     function animateFillWidth(fill, targetWidth) {
       let currentWidth = 0;
 
@@ -209,4 +199,6 @@ function calculateAndDisplayPercentages() {
   document.getElementById("allProsent").textContent = `${totalPercentage}%`;
 }
 calculateAndDisplayPercentages();
+
 // __________________________________________new
+
