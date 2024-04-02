@@ -1,23 +1,23 @@
 const elements = {
   numberBTC: [],
   numberSOL: [],
-  numberMatic: [172],
+  numberMatic: [314],
   numberStellar: [258],
   numberShib: [],
   numberLink: [],
   numberNear: [],
   numberAvax: [],
-  numberDot: [234],
+  numberDot: [346],
 };
 const allBtc = [0, 0];
 const allSOL = [0, 0];
-const allMatic = [28.2, 129.3];
+const allMatic = [28.2, 129.3, 76];
 const allStellar = [25, 249.5, 589, 554];
 const allShib = [0, 0];
 const allLink = [0, 0];
 const allNear = [0, 0];
 const allAvax = [0, 0];
-const allDot = [10.2, 8.39];
+const allDot = [10.2, 8.39, 8.87];
 
 const sumBtc = allBtc.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
