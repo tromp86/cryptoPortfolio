@@ -125,7 +125,7 @@ function calculateAndDisplayTotal() {
   const totalParagraph = document.querySelector("h1");
   const differenceParagraph = document.getElementById("amount");
 
-  const total = 4800;
+  const total = 5000;
 
   totalParagraph.textContent = `Total: ***$`;
   differenceParagraph.textContent = `Amount: - ***$`;
@@ -164,15 +164,15 @@ function calculateAndDisplayTotal() {
         }
       }, 10);
     }
-    animateFillWidth(fill1, (number1 / 912) * 100);
-    animateFillWidth(fill2, (number2 / 1056) * 100);
-    animateFillWidth(fill3, (number3 / 672) * 100);
-    animateFillWidth(fill4, (number4 / 384) * 100);
-    animateFillWidth(fill5, (number5 / 240) * 100);
-    animateFillWidth(fill6, (number6 / 192) * 100);
-    animateFillWidth(fill7, (number7 / 336) * 100);
-    animateFillWidth(fill8, (number8 / 480) * 100);
-    animateFillWidth(fill9, (number9 / 528) * 100);
+    animateFillWidth(fill1, (number1 / 1000) * 100);
+    animateFillWidth(fill2, (number2 / 1150) * 100);
+    animateFillWidth(fill3, (number3 / 700) * 100);
+    animateFillWidth(fill4, (number4 / 400) * 100);
+    animateFillWidth(fill5, (number5 / 250) * 100);
+    animateFillWidth(fill6, (number6 / 200) * 100);
+    animateFillWidth(fill7, (number7 / 350) * 100);
+    animateFillWidth(fill8, (number8 / 350) * 100);
+    animateFillWidth(fill9, (number9 / 600) * 100);
 
     let total = 0;
     for (let paragraph of paragraphs) {
